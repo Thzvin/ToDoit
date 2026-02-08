@@ -20,7 +20,7 @@ const Home = ()=> {
     const selesai = (hasilkegiatan.filter(hasil => hasil.status === "selesai").length / panjang) * 100
     const belumseleai = hasilkegiatan.filter(hasil => hasil.status !== "selesai").length
    
-    console.log(selesai)
+
     
     // const belumselesai = hasilkegiatan.fill(hasil => hasil.status === "belum selesai").length
 
