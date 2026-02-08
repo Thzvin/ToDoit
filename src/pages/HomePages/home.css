@@ -1,0 +1,180 @@
+.containerHome .containerOne{
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.containerHome{
+ width: 100%;
+ overflow: hidden;
+}
+
+.containerHome .containerOne .inputcontainer{
+  width: 40%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 92vh;
+   display: flex;
+  justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border: 3px dotted rgb(0, 0, 0);
+   border-radius: 10px;
+  
+}
+
+.containerHome .containerOne .inputcontainer .contentInput{
+  border: 1px solid rgb(211, 210, 210);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  gap: 5px;
+}
+.containerHome .containerOne .inputcontainer .contentInput .titleinput , .deskripsiInput{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.containerHome .containerOne .inputcontainer .contentInput .titleinput input , .deskripsiInput input{
+   outline: none;
+   border: 2px dotted rgb(94, 140, 224) ;
+   width: 250px;
+   padding: 10px;
+   box-sizing: border-box;
+   border-radius: 5px;
+   font-size: 15px;
+      transition: all 1.2s ease;
+}
+
+.containerHome .containerOne .inputcontainer .contentInput .titleinput label , .deskripsiInput label{
+   font-size: 16px;
+}
+
+.containerHome .containerOne .inputcontainer .contentInput button{
+  border: none;
+  color: white;
+  background-color:  rgb(58, 155, 235);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* .containerHome .containerOne .inputcontainer {
+  width: 100%;
+  height: 100%; 
+  
+} */
+.containerHome .containerdata{
+  
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px black;
+   border: 3px rgb(82, 149, 226) dotted;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 92vh;
+  overflow-y: scroll;
+  transition: all 1.2s ease-out;
+}
+
+.containerHome .containerdata .comtainer{
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgb(224, 64, 64);
+  color: white;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  transition: all 1.2s ease;
+}
+.containerHome .containerdata .comtainer .containerText{
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
+}
+.containerHome .containerdata .comtainer .containerText .nomor{
+   display: inline;
+   width: 80px;
+   background-color: rgb(88, 88, 179);
+   text-align: center;
+    
+}
+.containerHome .containerdata .comtainer.selesai{
+  background-color: rgb(58, 155, 235);
+}
+.containerHome .containerdata .comtainer .containercheckbox{
+  display: none;
+}
+
+.containerHome .containerdata .comtainer .containercheckbox.active{
+  display: block;
+}
+.checkbox {
+  width: 15px;
+  height: 15px;
+  appearance: none;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-color: #000000;
+}
+
+@media screen and (max-width: 1164px) {
+ .containerHome .containerOne .inputcontainer{
+    width: 50%;
+    transition: all 1.2s ease;
+ }
+
+ .containerHome .containerOne .inputcontainer .contentInput .titleinput input , .deskripsiInput input{
+
+   width: 200px;
+   padding: 6px;
+   transition: all 1.2s ease;
+   
+}
+
+.containerHome .containerOne .inputcontainer .contentInput button{
+
+  padding: 6px;
+  border-radius: 5px;
+}
+}
+
+@media screen and (max-width: 834px) {
+ .containerHome .containerOne .inputcontainer{
+    width: 60%;
+    transition: all 1.2s ease;
+ }
+
+ 
+}
+
+@media screen and (max-width: 600px) {
+  
+ .containerHome .containerOne{
+  display: flex;
+  flex-direction: column;
+ }
+ 
+.containerHome .containerOne .inputcontainer{
+  width: 100%;
+  height: 300px;
+}
+
+.containerHome .containerdata{
+  height: 100%;
+  transition: all 1.2s ease;
+  overflow: none;
+}
+}

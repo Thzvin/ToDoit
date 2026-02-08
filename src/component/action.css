@@ -1,0 +1,35 @@
+/* .actioninaction {
+   display: none;
+} */
+
+/* .actioninaction.active {
+
+    display: flex;
+      transition: all 0.3s ease; 
+    visibility: visible;
+      position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    flex-direction: column;
+    transform: translateY(0); 
+    
+
+
+} */
+
+
+.containerAction{
+  display: flex;
+  gap: 5px;
+
+}
+
+.containerAction button{
+  padding: 5px;
+  box-sizing: border-box;
+  border: none;
+  border-radius:5px;
+  background-color:  rgb(206, 136, 238);
+  color: rgb(0, 0, 0);
+}

@@ -1,0 +1,123 @@
+.containerNav{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerNav .navigasi{
+    gap:20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
+.containerNav .navigasi ul{
+    display: flex;
+    width: 200px;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.containerNav .navigasi ul li{
+    list-style: none;
+}
+.containerNav .navigasi ul li a{
+    text-decoration: none;
+    color: white;
+}
+.containerNav .accountContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.containerNav .accountContainer .profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+}
+.navigasi .hamburger {
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+.navigasi .hamburger span{
+    width: 30px;
+    border-radius: 10px;
+    height: 5px;
+    background-color: white;
+    display: block;
+    
+
+      transition: 
+    transform 0.3s ease,
+    opacity 0.2s ease;
+
+}
+
+.containerNav .accountContainer button{
+    border:none;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: rgb(91, 155, 228);
+    color: rgb(255, 255, 255);
+}
+
+.containerNav .accountContainer button:hover{
+   background-color: rgb(101, 123, 197);
+   transform: scale(1.1);
+   transition: all 0.5s ease;
+
+   border: 1px solid  rgb(111, 133, 204);
+}
+
+
+@media screen and (max-width: 479px) {
+  
+ .navigasi .nav ul{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    height: 150px;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100px;
+     width: 150px;
+     padding: 10px;
+     border-radius: 0px 0px 0px 5px;
+     background-color: rgb(48, 48, 48);
+    display: none;
+    transition: all 1.2s ease;
+
+ }
+
+  .navigasi .nav ul.active{
+    display: flex;
+  }
+.navigasi .hamburger {
+    display: flex;
+}
+.navigasi .hamburger.active span:nth-child(1) {
+  transform: rotate(48deg) translate(6px, 7px);
+}
+
+.navigasi .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navigasi .hamburger.active span:nth-child(3) {
+  transform: rotate(-47deg) translate(6px, -9px);
+}
+}

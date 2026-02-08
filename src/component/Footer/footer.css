@@ -1,0 +1,17 @@
+.footerText{
+    display: flex;
+   gap: 100px;
+}
+
+.footerText .resourch{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.footerText .resourch .contentResourch{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
