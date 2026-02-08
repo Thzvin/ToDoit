@@ -18,6 +18,7 @@ const Home = ()=> {
     const [account2 , setAccount2] = useState([])
   
     const panjang = hasilkegiatan.length
+
    const selesai = Math.ceil((hasilkegiatan.filter(hasil => hasil.status === "selesai").length / panjang) * 100);
 
 const belumselesai = 100 - selesai
@@ -255,7 +256,7 @@ const belumselesai = 100 - selesai
 
                      </div>
 
-                      <p>Selesai {selesai} %</p>
+                      <p>Selesai {hasilkegiatan.length === 0 ?  "0" : selesai}  %</p>
                       </div>
                   
                       <div className="containerDiagramBelum">
@@ -265,7 +266,7 @@ const belumselesai = 100 - selesai
                             </div>
 
                          </div>
-                            <p>Belum {belumselesai} %</p>
+                            <p>Belum {hasilkegiatan.length === 0 ? "0" : belumselesai} %</p>
                       </div>
                      
                     </div>

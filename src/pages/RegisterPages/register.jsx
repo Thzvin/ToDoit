@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState , useEffect } from "react"
 import { useNavigate , Navigate } from "react-router-dom"
 import "./register.css"
 import { urllocal } from "../../utils/fungsi"
@@ -7,11 +7,26 @@ const Register = () => {
     const [username , setUsername] = useState("")
     const [password , setPassword] = useState("")
     const [cpassword , setCpassword] = useState("")
+    const [token , setToken] = useState("")
 
     const navigate = useNavigate()
 
-    const register = async () => {
-            
+
+useEffect(() => {
+  window.onRecaptchaSuccess = (token) => {
+    setToken(token);
+  };
+}, []);
+
+    const register = async (e) => {
+            e.preventDefault();
+
+
+        if (!token) {
+        alert("Silahkan centang reCAPTCHA");
+        return;
+        }
+
         if(username.length < 8){
             alert("username kurang dari 8")
             return
@@ -37,7 +52,8 @@ const Register = () => {
 
                     body: JSON.stringify({
                     username,
-                    password
+                    password,
+                    token
                     })
 
 
@@ -57,8 +73,13 @@ const Register = () => {
 
        
         <div className="containerRegister">
+  
             <div className="formRegister">
-
+      <div
+  className="g-recaptcha"
+  data-sitekey="6LdmrGQsAAAAAJFLu4BNqjtcbJrN4z01lUOkfktr"
+  data-callback="onRecaptchaSuccess"
+></div>
         <div className="text">
         <h1>To Do It</h1>
         <p>Enter your username and password to create account</p>
@@ -105,6 +126,9 @@ const Register = () => {
         <button onClick={register}>register</button>
         <h5>have an account? <a href="/login">Login</a></h5>
             </div>
+
+
+
         </div>
 
 
