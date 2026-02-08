@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate , Navigate } from "react-router-dom"
 import "./register.css"
+import { urllocal } from "../../utils/fungsi"
 
 const Register = () => {    
     const [username , setUsername] = useState("")
@@ -28,7 +29,7 @@ const Register = () => {
 
 
         
-        const res = await fetch("https://betodoit-production.up.railway.app/register" , {
+        const res = await fetch(`${urllocal}register` , {
                  method: "POST",
                 headers: {
                 "Content-Type": "application/json"

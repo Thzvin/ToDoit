@@ -2,13 +2,13 @@
 import { Navigate , useNavigate } from "react-router-dom"
 import "./account.css"
 import { useEffect, useState } from "react"
-import { jalan } from "../../utils/fungsi"
+import { jalan, urllocal } from "../../utils/fungsi"
 
 const Account  = () => {
     const navigate = useNavigate()
     const [account , setAccount] = useState([])
     const logout = async () => {
-            const res = await fetch("https://betodoit-production.up.railway.app/logout", {
+            const res = await fetch(`${urllocal}logout`, {
                 method: "POST",
                 credentials: "include"
                 })

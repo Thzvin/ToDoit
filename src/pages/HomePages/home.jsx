@@ -4,6 +4,7 @@ import "./home.css"
 import Alert from "../../component/Alert/alert";
 import Nav from "../../component/navbar/nav";
 import { jalan } from "../../utils/fungsi";
+import { urllocal } from "../../utils/fungsi";
 const Home = ()=> {
     const [account , setAccount] =  useState("")
     const [kegiatan , setKegiatan] = useState("")
@@ -17,10 +18,11 @@ const Home = ()=> {
     const [account2 , setAccount2] = useState([])
   
     const panjang = hasilkegiatan.length
-    const selesai = (hasilkegiatan.filter(hasil => hasil.status === "selesai").length / panjang) * 100
-    const belumseleai = hasilkegiatan.filter(hasil => hasil.status !== "selesai").length
-   
+   const selesai = Math.ceil((hasilkegiatan.filter(hasil => hasil.status === "selesai").length / panjang) * 100);
 
+const belumselesai = 100 - selesai
+   
+ console.log(selesai)
     
     // const belumselesai = hasilkegiatan.fill(hasil => hasil.status === "belum selesai").length
 
@@ -48,7 +50,7 @@ const Home = ()=> {
              
             }
 
-              const res = await fetch("https://betodoit-production.up.railway.app/todolist", {
+              const res = await fetch(`${urllocal}todolist`, {
             method : "DELETE",
             credentials : "include",
             headers : {
@@ -70,7 +72,7 @@ const Home = ()=> {
     
     const getTodolist = async () => {
       try {
-        const res = await fetch("https://betodoit-production.up.railway.app/todolist", {
+        const res = await fetch(`${urllocal}todolist`, {
           credentials: "include"
         })
   
@@ -114,7 +116,7 @@ const Home = ()=> {
 
 
        try{
-            const res = await fetch("https://betodoit-production.up.railway.app/todolist", {
+            const res = await fetch(`${urllocal}todolist`, {
              method: "POST",
               credentials: "include",
               headers: {
@@ -241,9 +243,40 @@ const Home = ()=> {
                     </div>
              
                 </div>
+
+                <div className="containerDiagram">
+                  <div className="contentDiagram">
+                    <div className="containerdiagram">
+                      <div className="containerDiagramSelesai">
+                             <div className="diagramSelesai">
+                        <div className="selesai" style={{height:`${selesai*2}px`, transition:`all 1.2s ease`} }>
+                        </div>
+
+
+                     </div>
+
+                      <p>Selesai {selesai} %</p>
+                      </div>
+                  
+                      <div className="containerDiagramBelum">
+                         <div className="diagramBelum">
+                            <div className="belum"style={{height:`${belumselesai*2}px`, transition:`all 1.2s ease` } } >
+
+                            </div>
+
+                         </div>
+                            <p>Belum {belumselesai} %</p>
+                      </div>
+                     
+                    </div>
+
+                  </div>
+                </div>
              
             </div>
             
+
+          
         </>
 
     )

@@ -3,7 +3,7 @@
    
         try{
             
-            const res =await fetch("https://betodoit-production.up.railway.app/todolist", {
+            const res =await fetch(`${urllocal}todolist`, {
                 method: "PATCH",
                 credentials: "include",
                 headers: {
@@ -40,7 +40,7 @@
 
 
     export const jalan = async (setIsLogin) => {
-        const res = await fetch("https://betodoit-production.up.railway.app/me", {
+        const res = await fetch(`${urllocal}me`, {
         credentials: "include"
       })
 
@@ -61,4 +61,6 @@
     }
 
 
-  
+
+
+    export const urllocal= "https://betodoit-production.up.railway.app/"

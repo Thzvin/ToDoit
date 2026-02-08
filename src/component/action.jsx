@@ -1,4 +1,4 @@
-import { fungsipatch } from "../utils/fungsi"
+import { fungsipatch, urllocal } from "../utils/fungsi"
 import { useRef, useState } from "react"
 
 import "./action.css"
@@ -34,7 +34,7 @@ const [active , setActive] = useState(false)
   
 
   const hapus = async (index , setIndex , index1) => {
-      const res = await fetch("https://betodoit-production.up.railway.app/todolist", {
+      const res = await fetch(`${urllocal}todolist`, {
             method : "DELETE",
             credentials : "include",
             headers : {
@@ -71,19 +71,16 @@ const [active , setActive] = useState(false)
                 {/* <button onClick={() => setActive(!active)}>Action</button> */}
                 {/* <div ref={action} className={`actioninaction ${active ? "active" : ""}`}> */}
                      {count === 0 ? (
-                             <button onClick={() => hapus(index ,setIndex , index1 )}>Detele</button>
+                             <button onClick={() => hapus(index ,setIndex , index1 )}>Delete</button>
                      ) : (
                         ""
                      )}
-                    
                      {status === 'selesai'? (
                              <button onClick={() => fungsipatch(index , "Belum selesai" , getTodolist , setActive , settitle, setAct)}>Belum Selesai</button>
                      ): (
                               <button onClick={() => fungsipatch(index , "selesai" , getTodolist , setActive , settitle , setAct)}>Selesai</button>
                      )}
-                   
                 {/* </div> */}
-
             </div>
         )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate , Navigate } from "react-router-dom"
 import "./login.css"
+import { urllocal } from "../../utils/fungsi"
 const Login = () => {
     const[inputuser, setInputuser] = useState("")
     const[inputpass, setInputpass] = useState("")
@@ -14,7 +15,7 @@ const kirim = async () => {
         return
     }
 
-  const res = await fetch("https://betodoit-production.up.railway.app/login", {
+  const res = await fetch(`${urllocal}login`, {
     method: "POST",
     credentials: "include",
     headers: {
