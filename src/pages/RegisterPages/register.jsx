@@ -77,7 +77,7 @@ useEffect(() => {
             <div className="formRegister">
       <div
   className="g-recaptcha"
-  data-sitekey="6LdmrGQsAAAAAJFLu4BNqjtcbJrN4z01lUOkfktr"
+  data-sitekey="6LdgtmQsAAAAAMk6oOaUOj7mf3VBN-YfdY0NbmaC"
   data-callback="onRecaptchaSuccess"
 ></div>
         <div className="text">
